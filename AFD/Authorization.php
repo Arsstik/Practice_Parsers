@@ -8,12 +8,11 @@ class Authorization extends HttpAuthorisation
 {
     public function beforeAuthorization(): void
     {
-
         $this->getParams()
             ->setCheckLoginText( 'Sign out' )
-            ->setAuthLink( 'https://afdhome.com/login.php' )
+            ->setAuthLink( 'https://afdhome.com/login.php?action=check_login' )
             ->setAuthFormLink( 'https://afdhome.com/login.php' )
-            ->setAuthInfo( 'email_address', $this->getLogin() )
-            ->setAuthInfo( 'password', $this->getPassword() );
+            ->setAuthInfo( 'login_email', $this->getLogin() )//vrs@s3stores.com
+            ->setAuthInfo( 'login_pass', $this->getPassword() );//j2Rse8J3N5xR9W!
     }
 }
